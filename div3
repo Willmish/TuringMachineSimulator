@@ -1,0 +1,17 @@
+alphabet:
+0 1 #
+tape:
+# 1 0 1 0 1 1 0 1 0 1
+states:
+DIVISIBLE ONE1 ONE0
+starting state:
+DIVISIBLE
+accepting states:
+DIVISIBLE
+transitions:
+DIVISIBLE 0 0 DIVISIBLE >
+DIVISIBLE 1 1 ONE1 >
+ONE1 1 1 DIVISIBLE >
+ONE1 0 0 ONE0 >
+ONE0 0 0 ONE1 >
+ONE0 1 1 ONE0 >

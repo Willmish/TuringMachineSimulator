@@ -1,0 +1,18 @@
+alphabet:
+0 1 #
+tape:
+# 1 1 0 1 0 0
+states:
+START FIRST0 REJECTED SECOND0 ACCEPTED
+starting state:
+START
+accepting states:
+ACCEPTED
+transitions:
+START 0 0 START >
+START 1 1 START >
+START # # FIRST0 <
+FIRST0 1 1 REJECTED -
+FIRST0 0 0 SECOND0 <
+SECOND0 0 0 ACCEPTED -
+SECOND0 1 1 REJECTED -
