@@ -9,8 +9,12 @@ Currently, in order to add a new program you need to create a new .txt file, fol
 machine and manually add its option to the code.
 
 TODOs:
+
   -I am currently working to improve that, a new feature will allow it to automatically
   find and make turing machines available to use.
+  
   -Allow for creation of new turing machines while using the program (through the UI).
+  
   -Add a GUI for the program.
+  
   -Add a better visualisation of the machine (drawing states and transitions?).
