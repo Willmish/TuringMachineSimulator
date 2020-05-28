@@ -10,8 +10,7 @@ machine and manually add its option to the code.
 
 TODOs:
 
-  -I am currently working to improve that, a new feature will allow it to automatically
-  find and make turing machines available to use.
+  - Search through the projects dir for .txt files which fit the machine's language and make them available in the UI.
   
   -Allow for creation of new turing machines while using the program (through the UI).
   
