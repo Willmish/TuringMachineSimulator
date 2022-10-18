@@ -1,5 +1,6 @@
 from typing import List, Dict
 import time, os, sys
+from platform import system
 
 
 # If you create new machines (text files), do it as in the example file, leaving an empty line at the end
@@ -95,18 +96,27 @@ class UI:
     def __init__(self) -> None:
         self.t: TuringMachine = None
         self.s: Simulator = None
+        if system() == "Windows":
+            self._cleaning_cmd: str = "cls"
+            self._pausing_cmd: str = "pause"
+        elif system() in ("Linux", "Darwin"):
+            self._cleaning_cmd: str = "clear"
+            self._pausing_cmd: str = ""
+        else:
+            print("System could not be determined, defaulting to POSIX...")
+            self._cleaning_cmd: str = "clear"
+            self._pausing_cmd: str = ""
+
 
     # Doesn't need to have access to anything from the class - interacts with the user
     @staticmethod
     def getInput() -> str:
         return input("\n>>> ")
 
-    @staticmethod
-    def clear():
+    def clear(self):
         # clears the console
         print('\n\n\n\n\n\n')
-        os.system("cls")
-        # for linux change to clear ^^^
+        os.system(self._cleaning_cmd)
         print('\n\n\n\n\n\n\n\n')
 
     def startUser(self) -> None:
@@ -262,5 +272,5 @@ ui: UI = UI()
 # create the UI
 ui.startFile()
 # start the program
-os.system("pause")
+os.system(ui._pausing_cmd)
 # pause the program
